@@ -1,0 +1,42 @@
+digraph protocolTV{
+
+/* 
+	Name of node [type=..., color=..., bit=..., set=...]; 
+	Properties of node in [...] aren't compulsory.
+	Properties:
+	1. type - type of node, for example: key, function, etc.
+	2. color - color of node, typically green, orange or red. Name of color is written in double quotes.
+	3. bit - entropy of node
+	4. set - set of node, D - defined set; A - set, in which attacker is interested; AD or DA - both
+*/
+scard[type= user];
+tv[type= user, color="red"];
+Ins[type= number];
+kc_pub[type= public_key,bit=40,set=A];
+kd_pub[type= public_key];
+E0(Ins,kd_priv)[type=data];
+encrypt0[type=function];
+
+/*
+	Edge from start_node to end_node is marked as:
+	start_node -> end_node;
+	In case from more nodes to end_node:
+	{first_node, second_node, ..., n_node} -> end_node;
+*/
+{Ins,kd_priv} -> encrypt0;
+encrypt0 -> E0(Ins,kd_priv);
+
+decrypt0[type=function];
+{kd_pub,E0(Ins,kd_priv)} -> decrypt0;
+decrypt0 -> Ins;
+
+E1(Ins,kc_priv)[type=data];
+encrypt1[type=function];
+{Ins,kc_priv} -> encrypt1;
+encrypt1 -> E1(Ins,kc_priv);
+
+decrypt1[type=function];
+{kc_pub,E1(Ins,kc_priv)} -> decrypt1;
+decrypt1 -> Ins;
+
+}
