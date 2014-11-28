@@ -415,13 +415,14 @@ namespace CAG
         /// </returns>
         private int cmdLineDot(string[] input, Analyse analyse)
         {
+            fileName = input[3];
             if ((fileName.Substring(fileName.Length - 3).ToLower() != "dot")
                 && fileName.Substring(fileName.Length - 2).ToLower() != "gv")
                 return -4;
             if (!((input[4].ToLower() == "-p" && input[5].Substring(input[5].Length - 3).ToLower() == "png")
                 || (input[4].ToLower() == "-d" && input[5].Substring(input[5].Length - 3).ToLower() == "dot")))
                 return -4;
-            fileName = input[3];
+            
             switch (readFile())
             {
                 case -2:
