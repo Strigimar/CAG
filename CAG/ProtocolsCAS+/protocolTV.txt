@@ -1,0 +1,19 @@
+protocol TV; % public key
+identifiers
+C,D : user;
+Ins : number;
+Kc,Kd : public_key; %Kc:40bit,A;
+messages
+1. D -> C : D,{Ins}Kd'
+2. C -> D : C,{Ins}Kc'
+knowledge
+D : C,Kc,Kd;
+C : D,Kc,Kd;
+session_instances
+[C:scard,D:tv,Kc:kc,Kd:kd]
+[C:i,D:tv,Kc:ki,Kd:kd];
+intruder_knowledge
+tv,scard,ki,ki',kc,kd;
+goal
+D authenticates C on Ins;
+secrecy_of Ins [C,D];

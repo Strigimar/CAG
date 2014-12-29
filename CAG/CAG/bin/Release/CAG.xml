@@ -1,0 +1,1410 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CAG</name>
+    </assembly>
+    <members>
+        <member name="T:Petzold.Media2D.ArrowEnds">
+            <summary>
+                Indicates which end of the line has an arrow.
+            </summary>
+        </member>
+        <member name="T:Petzold.Media2D.ArrowLine">
+            <summary>
+                Draws a straight line between two points with 
+                optional arrows on the ends.
+            </summary>
+        </member>
+        <member name="T:Petzold.Media2D.ArrowLineBase">
+            <summary>
+                Provides a base class for ArrowLine and ArrowPolyline.
+                This class is abstract.
+            </summary>
+        </member>
+        <member name="F:Petzold.Media2D.ArrowLineBase.ArrowAngleProperty">
+            <summary>
+                Identifies the ArrowAngle dependency property.
+            </summary>
+        </member>
+        <member name="F:Petzold.Media2D.ArrowLineBase.ArrowLengthProperty">
+            <summary>
+                Identifies the ArrowLength dependency property.
+            </summary>
+        </member>
+        <member name="F:Petzold.Media2D.ArrowLineBase.ArrowEndsProperty">
+            <summary>
+                Identifies the ArrowEnds dependency property.
+            </summary>
+        </member>
+        <member name="F:Petzold.Media2D.ArrowLineBase.IsArrowClosedProperty">
+            <summary>
+                Identifies the IsArrowClosed dependency property.
+            </summary>
+        </member>
+        <member name="M:Petzold.Media2D.ArrowLineBase.#ctor">
+            <summary>
+                Initializes a new instance of ArrowLineBase.
+            </summary>
+        </member>
+        <member name="P:Petzold.Media2D.ArrowLineBase.ArrowAngle">
+            <summary>
+                Gets or sets the angle between the two sides of the arrowhead.
+            </summary>
+        </member>
+        <member name="P:Petzold.Media2D.ArrowLineBase.ArrowLength">
+            <summary>
+                Gets or sets the length of the two sides of the arrowhead.
+            </summary>
+        </member>
+        <member name="P:Petzold.Media2D.ArrowLineBase.ArrowEnds">
+            <summary>
+                Gets or sets the property that determines which ends of the
+                line have arrows.
+            </summary>
+        </member>
+        <member name="P:Petzold.Media2D.ArrowLineBase.IsArrowClosed">
+            <summary>
+                Gets or sets the property that determines if the arrow head
+                is closed to resemble a triangle.
+            </summary>
+        </member>
+        <member name="P:Petzold.Media2D.ArrowLineBase.DefiningGeometry">
+            <summary>
+                Gets a value that represents the Geometry of the ArrowLine.
+            </summary>
+        </member>
+        <member name="F:Petzold.Media2D.ArrowLine.X1Property">
+            <summary>
+                Identifies the X1 dependency property.
+            </summary>
+        </member>
+        <member name="F:Petzold.Media2D.ArrowLine.Y1Property">
+            <summary>
+                Identifies the Y1 dependency property.
+            </summary>
+        </member>
+        <member name="F:Petzold.Media2D.ArrowLine.X2Property">
+            <summary>
+                Identifies the X2 dependency property.
+            </summary>
+        </member>
+        <member name="F:Petzold.Media2D.ArrowLine.Y2Property">
+            <summary>
+                Identifies the Y2 dependency property.
+            </summary>
+        </member>
+        <member name="P:Petzold.Media2D.ArrowLine.X1">
+            <summary>
+                Gets or sets the x-coordinate of the ArrowLine start point.
+            </summary>
+        </member>
+        <member name="P:Petzold.Media2D.ArrowLine.Y1">
+            <summary>
+                Gets or sets the y-coordinate of the ArrowLine start point.
+            </summary>
+        </member>
+        <member name="P:Petzold.Media2D.ArrowLine.X2">
+            <summary>
+                Gets or sets the x-coordinate of the ArrowLine end point.
+            </summary>
+        </member>
+        <member name="P:Petzold.Media2D.ArrowLine.Y2">
+            <summary>
+                Gets or sets the y-coordinate of the ArrowLine end point.
+            </summary>
+        </member>
+        <member name="P:Petzold.Media2D.ArrowLine.DefiningGeometry">
+            <summary>
+                Gets a value that represents the Geometry of the ArrowLine.
+            </summary>
+        </member>
+        <member name="T:CAG.Edge">
+            <summary>
+            Class edge inherits from UnitGraph, it represents edge from node to another node.
+            </summary>
+        </member>
+        <member name="T:CAG.UnitGraph">
+            <summary>
+            Abstract class UnitGraph represents basic unit - node or edge of graph.
+            </summary>
+        </member>
+        <member name="F:CAG.UnitGraph.color">
+            <summary>
+            Color of border of node
+            </summary>
+        </member>
+        <member name="F:CAG.UnitGraph.value">
+            <summary>
+            Value or name of node
+            </summary>
+        </member>
+        <member name="M:CAG.UnitGraph.#ctor(System.String)">
+            <summary>
+            Save value (name) and set color to black.
+            </summary>
+            <param name="value">Value which will be saved</param>
+        </member>
+        <member name="P:CAG.UnitGraph.Color">
+            <summary>
+            Getter and setter of color
+            </summary>
+        </member>
+        <member name="P:CAG.UnitGraph.Value">
+            <summary>
+            Getter and setter of value
+            </summary>
+        </member>
+        <member name="P:CAG.UnitGraph.Type">
+            <summary>
+            Virtual getter and setter of type of node.
+            </summary>
+        </member>
+        <member name="P:CAG.UnitGraph.V">
+            <summary>
+            Virtual getter and setter of class vertex representing coordinates x and y of node.
+            </summary>
+        </member>
+        <member name="P:CAG.UnitGraph.Bit">
+            <summary>
+            Virtual getter and setter of bits of node.
+            </summary>
+        </member>
+        <member name="P:CAG.UnitGraph.Set">
+            <summary>
+            Virtual getter and setter of determination, what set this node belongs to.
+            </summary>
+        </member>
+        <member name="P:CAG.UnitGraph.Compromised">
+            <summary>
+            Virtual getter and setter of determination, how much node is compromised.
+            </summary>
+        </member>
+        <member name="P:CAG.UnitGraph.Vertices">
+            <summary>
+            Virtual getter and setter of list of vertex for edge.
+            </summary>
+        </member>
+        <member name="F:CAG.Edge.fromTo">
+            <summary>
+            Pair of nodes, which edge begins in first node and ends in second node.
+            </summary>
+        </member>
+        <member name="F:CAG.Edge.vertices">
+            <summary>
+            List of vertices. Vertices notes places in edge where begin other direction.
+            </summary>
+        </member>
+        <member name="M:CAG.Edge.#ctor(CAG.Node,CAG.Node)">
+            <summary>
+            Saves nodes to pair of nodes from and to. 
+            </summary>
+            <param name="from">Node, where edge begins.</param>
+            <param name="to">Node, where edge ends.</param>
+        </member>
+        <member name="M:CAG.Edge.Equals(System.Object)">
+            <summary>
+            Override method which compares this edge with parameter if edges are equal.
+            Edges are equal if edges begin in same node and end in same node.
+            </summary>
+            <param name="obj">Object which will be compared with this edge</param>
+            <returns>False, if parameter is null or isn't equal with this edge. Otherwise true.</returns>
+        </member>
+        <member name="M:CAG.Edge.GetHashCode">
+            <summary>
+            Override method which gets hash code.
+            </summary>
+            <returns>Hash code of this edge.</returns>
+        </member>
+        <member name="P:CAG.Edge.FromTo">
+            <summary>
+            Getter of pair of nodes fromTo.
+            </summary>
+        </member>
+        <member name="P:CAG.Edge.Vertices">
+            <summary>
+            Override getter and setter of list of vertices.
+            </summary>
+        </member>
+        <member name="T:CAG.PropertiesGraph">
+            <summary>
+            Interaction logic for Entropies.xaml
+            </summary>
+            <summary>
+            PropertiesGraph
+            </summary>
+        </member>
+        <member name="F:CAG.PropertiesGraph.entropy">
+            <summary>
+            Dictionary where key is Slider and value is TextBox.
+            </summary>
+        </member>
+        <member name="F:CAG.PropertiesGraph.sliders">
+            <summary>
+            Dictionary where key is Slider and value is Node.
+            </summary>
+        </member>
+        <member name="F:CAG.PropertiesGraph.setNode">
+            <summary>
+            Dictionary where key is ComboBox and value is Node.
+            </summary>
+        </member>
+        <member name="M:CAG.PropertiesGraph.#ctor">
+            <summary>
+            Constructor which creates and shows window.
+            </summary>
+        </member>
+        <member name="M:CAG.PropertiesGraph.addNodes(System.Collections.Generic.List{CAG.Node})">
+            <summary>
+            Method creates new Label, ComboBox and Slider every node from list of nodes.
+            </summary>
+            <param name="nodes">List of nodes of graph</param>
+        </member>
+        <member name="M:CAG.PropertiesGraph.com_SelectionChanged(System.Object,System.Windows.Controls.SelectionChangedEventArgs)">
+            <summary>
+            Method changes type of set of node after new select in ComboBox.
+            </summary>
+            <param name="sender">Sender</param>
+            <param name="e">Selection changed event args</param>
+        </member>
+        <member name="M:CAG.PropertiesGraph.slider_ValueChanged(System.Object,System.Windows.RoutedPropertyChangedEventArgs{System.Double})">
+            <summary>
+            Method changes entropy of node after change in Slider
+            </summary>
+            <param name="sender">Sender</param>
+            <param name="e">Routed property changed event args</param>
+        </member>
+        <member name="M:CAG.PropertiesGraph.Window_Close(System.Object,System.EventArgs)">
+            <summary>
+            Method change new entropies and sets of nodes before window close.
+            </summary>
+            <param name="sender">Sender</param>
+            <param name="e">Event args</param>
+        </member>
+        <member name="M:CAG.PropertiesGraph.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:CAG.MyFile">
+            <summary>
+            General class for working with file.
+            </summary>
+        </member>
+        <member name="F:CAG.MyFile.nameFile">
+            <summary>
+            Name of file
+            </summary>
+        </member>
+        <member name="F:CAG.MyFile.lines">
+            <summary>
+            List of lines in file.
+            </summary>
+        </member>
+        <member name="M:CAG.MyFile.#ctor(System.String)">
+            <summary>
+            Save name.
+            </summary>
+            <param name="name">Save it as name of file</param>
+        </member>
+        <member name="M:CAG.MyFile.existFile">
+            <summary>
+            Method tests if this file exist.
+            </summary>
+            <returns>If this file exist, return true. Otherwise false.</returns>
+        </member>
+        <member name="M:CAG.MyFile.openFile">
+            <summary>
+            Method tests if this file can be open. 
+            </summary>
+            <returns>If this file can be open, return true. Otherwise false</returns>
+        </member>
+        <member name="T:CAG.Parser">
+            <summary>
+            Class for parsing text from protocol CAS+ and writing to file DOT
+            </summary>
+        </member>
+        <member name="F:CAG.Parser.nameDotFile">
+            <summary>
+            Name of file with DOT language. This file is temporary because
+            it serves for showing attack graph.
+            </summary>
+        </member>
+        <member name="F:CAG.Parser.nameDotFile1">
+            <summary>
+            Name of file with DOT language. This file is newer than nameDotFile
+            because parsing session_instancies add new changes to it.
+            </summary>
+        </member>
+        <member name="F:CAG.Parser.writeDot">
+            <summary>
+            Stream for writing to file with DOT language.
+            </summary>
+        </member>
+        <member name="F:CAG.Parser.knowledges">
+            <summary>
+            List of knowledges which are in protocol CAS+ in third part.
+            </summary>
+        </member>
+        <member name="F:CAG.Parser.countDotFiles">
+            <summary>
+            Count of files with DOT. In fourth part (session_instancies) can be more 
+            session --> more graphs.
+            </summary>
+        </member>
+        <member name="F:CAG.Parser.keys">
+            <summary>
+            Map of keys, where key is string and value is type of key. 
+            Protocol CAS+ can contain more keys and different type.
+            </summary>
+        </member>
+        <member name="F:CAG.Parser.countEncrypt">
+            <summary>
+            Count of done encrypt and converse function. It serves for numbering encrypt functions.
+            </summary>
+        </member>
+        <member name="F:CAG.Parser.countConverse">
+            <summary>
+            Count of done encrypt and converse function. It serves for numbering encrypt functions.
+            </summary>
+        </member>
+        <member name="F:CAG.Parser.numberOfFunction">
+            <summary>
+            Dictionary of name of function and his number.
+            </summary>
+        </member>
+        <member name="M:CAG.Parser.#ctor(System.String,System.String)">
+            <summary>
+            Constructor which saves name of protocol and name of file with DOT.
+            </summary>
+            <param name="nameProtocol">Name of file containing protocol CAS+</param>
+            <param name="nameDotF">Name of file containing DOT language</param>
+        </member>
+        <member name="M:CAG.Parser.parse">
+            <summary>
+            Method reads all lines from protocol CAS+ and opens stream for writing to file with DOT.
+            Then method calls parsing lines.
+            </summary>
+            <returns>Count of files with DOT</returns>
+        </member>
+        <member name="M:CAG.Parser.parseLines">
+            <summary>
+            Method saves lines until get to other section ("identifiers", "messages",...)
+            If method gets to new section, calls method for parsing saving lines by type of section.
+            </summary>
+        </member>
+        <member name="M:CAG.Parser.parseIdentifirers(System.Collections.Generic.List{System.String})">
+            <summary>
+            Method parses section "identifiers". 
+            </summary>
+            <param name="descriptions">Lines containing variable and their types.</param>
+        </member>
+        <member name="M:CAG.Parser.parseMessage(System.Collections.Generic.List{System.String})">
+            <summary>
+            Method does cycle of lines containing second part - Message
+            and calls parsing of single line.
+            </summary>
+            <param name="descriptions">Lines containing messages between users</param>
+        </member>
+        <member name="M:CAG.Parser.splitComma(System.String)">
+            <summary>
+            Method removes commas in string and divided it. If comma is in bracket, comma won't be removed.
+            </summary>
+            <param name="line">Line where will be removes comma.</param>
+            <returns>Line divided by comma</returns>
+        </member>
+        <member name="M:CAG.Parser.parsePartMessage(System.Collections.Generic.List{System.String})">
+            <summary>
+            Method parses single line.
+            </summary>
+            <param name="parts">Line which contains part of message with contents of transfer.</param>
+        </member>
+        <member name="M:CAG.Parser.writeDecrypt(System.String,System.String,System.Int32)">
+            <summary>
+            Method writes to DOT decryption function by key.
+            </summary>
+            <param name="key">Key</param>
+            <param name="input">Input parameter to decryption</param>
+            <param name="j">Number of decrypt function</param>
+        </member>
+        <member name="M:CAG.Parser.parseSession(System.Collections.Generic.List{System.String})">
+            <summary>
+            Method parses fourth part - Session_instancies
+            </summary>
+            <param name="descriptions">Lines in fourth part</param>
+        </member>
+        <member name="M:CAG.Parser.parseKnowledgeIntruder(System.Collections.Generic.List{System.String})">
+            <summary>
+            Method parse lines in fifth part.
+            </summary>
+            <param name="descriptions">Lines containing knowledge of attacker</param>
+        </member>
+        <member name="T:CAG.Parser.typKey">
+            <summary>
+            Enum for type of key. None means that type isn't known. 
+            </summary>
+        </member>
+        <member name="T:CAG.Reader">
+            <summary>
+            Class for reading from file with DOT.
+            </summary>
+        </member>
+        <member name="M:CAG.Reader.#ctor(System.String)">
+            <summary>
+            Save name of file.
+            </summary>
+            <param name="nameFile">Name of file with DOT language</param>
+        </member>
+        <member name="M:CAG.Reader.readFile">
+            <summary>
+            Method reads from file and save to list of string. 
+            </summary>
+            <returns>It returns -1 if file doesn't exist, cannot open or cannot read. It returns -2, if format in DOT is not correct. 
+            Otherwise 0.</returns>
+        </member>
+        <member name="M:CAG.Reader.parseLines(CAG.Graph@)">
+            <summary>
+            Method parses lines from file to single nodes and edges.
+            </summary>
+            <param name="gr">Reference on graph which will edit its atributes</param>
+            <returns>-1 if bad format, 0 if OK</returns>
+        </member>
+        <member name="M:CAG.Reader.parseLine(System.String,CAG.Graph@)">
+            <summary>
+            Method parse line and save to node or edge by characteristic of line.
+            </summary>
+            <param name="line">One line from file</param>
+            <param name="gr">Reference on graph</param>
+        </member>
+        <member name="M:CAG.Reader.parseProperty(System.String,CAG.UnitGraph)">
+            <summary>
+            Method parses properties of node or edge.
+            </summary>
+            <param name="prop">String containing property of node, will be parsed</param>
+            <param name="unit">Node or edge</param>
+            <returns>Unit of graph (node or edge) containing new changes from parsing string</returns>
+        </member>
+        <member name="M:CAG.Reader.addRemoveQuote(System.Collections.Generic.List{System.String},System.Boolean)">
+            <summary>
+            Method adds or removes quote from words which contain parenthesis.
+            </summary>
+            <param name="strings">Lines from file</param>
+            <param name="add">If true -> add, if false -> remove</param>
+            <returns>List of strings where was added or removed quotes.</returns>
+        </member>
+        <member name="M:CAG.Reader.ExceptWhiteSpaces(System.String)">
+            <summary>
+            Method removes white spaces and divide string to more strings by ';'
+            </summary>
+            <param name="str">String where white spaces will be removed</param>
+            <returns>List of string - list of lines</returns>
+        </member>
+        <member name="T:CAG.Set">
+            <summary>
+            Enum which marks node if it belongs to defined input set or 
+            to set about which attacker is interested. This enum is be need
+            for find minimal set of input set.
+            </summary>
+        </member>
+        <member name="F:CAG.Set.Nothing">
+            <summary>
+            Node isn't in set.
+            </summary>
+        </member>
+        <member name="F:CAG.Set.Input">
+            <summary>
+            Node is in defined(input) set.
+            </summary>
+        </member>
+        <member name="F:CAG.Set.Attack">
+            <summary>
+            Node is in set which attacker is interested in.
+            </summary>
+        </member>
+        <member name="F:CAG.Set.Both">
+            <summary>
+            Node is in defined and also attacked set.
+            </summary>
+        </member>
+        <member name="T:CAG.Compromise">
+            <summary>
+            Enum which determines how much node is compromised.
+            </summary>
+        </member>
+        <member name="F:CAG.Compromise.EASY">
+            <summary>
+            Count of bits is less than 60
+            </summary>
+        </member>
+        <member name="F:CAG.Compromise.HARD">
+            <summary>
+            Count of bits is between 60 and 80
+            </summary>
+        </member>
+        <member name="F:CAG.Compromise.IMPOSSIBLE">
+            <summary>
+            Count of bits is more than 80
+            </summary>
+        </member>
+        <member name="T:CAG.Vertex">
+            <summary>
+            Class represents coordinates x and y, height and width of node.
+            </summary>
+        </member>
+        <member name="F:CAG.Vertex.x">
+            <summary>
+            X-coordinate of vertex
+            </summary>
+        </member>
+        <member name="F:CAG.Vertex.y">
+            <summary>
+            Y-coordinate of vertex
+            </summary>
+        </member>
+        <member name="F:CAG.Vertex.height">
+            <summary>
+            Height of vertex
+            </summary>
+        </member>
+        <member name="F:CAG.Vertex.width">
+            <summary>
+            Width of vertex
+            </summary>
+        </member>
+        <member name="M:CAG.Vertex.#ctor">
+            <summary>
+            Sets x, y, height and width as 0.
+            </summary>
+        </member>
+        <member name="M:CAG.Vertex.#ctor(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Saves values to x, y, height and width.
+            </summary>
+            <param name="x">X-coordinate</param>
+            <param name="y">Y-coordinate</param>
+            <param name="h">Height of node</param>
+            <param name="w">Width of node</param>
+        </member>
+        <member name="M:CAG.Vertex.#ctor(System.String,System.String)">
+            <summary>
+            Saves values from strings to x and y. Width and height will be set on 0.
+            </summary>
+            <param name="x">String which will be parsed and saved to X</param>
+            <param name="y">String which will be parsed and saved to Y</param>
+        </member>
+        <member name="M:CAG.Vertex.#ctor(CAG.Vertex)">
+            <summary>
+            Copy coordinates, width and height from parameter and saves them.
+            </summary>
+            <param name="v">Vertex which will be used to save</param>
+        </member>
+        <member name="M:CAG.Vertex.Equals(System.Object)">
+            <summary>
+            Override method on comparing. Two objects are equal if they have same value of x and y.
+            </summary>
+            <param name="obj">Object which will be compared with this vertex</param>
+            <returns>If parameter is null or isn't equal, return false. Otherwise true</returns>
+        </member>
+        <member name="M:CAG.Vertex.GetHashCode">
+            <summary>
+            Override method gets hash code of vertex.
+            </summary>
+            <returns>Hash code of vertex</returns>
+        </member>
+        <member name="P:CAG.Vertex.X">
+            <summary>
+            Getter and setter of x-coordinate.
+            </summary>
+        </member>
+        <member name="P:CAG.Vertex.Y">
+            <summary>
+            Getter and setter of y-coordinate.
+            </summary>
+        </member>
+        <member name="P:CAG.Vertex.Height">
+            <summary>
+            Getter and setter of height of node.
+            </summary>
+        </member>
+        <member name="P:CAG.Vertex.Width">
+            <summary>
+            Getter and setter of width of node.
+            </summary>
+        </member>
+        <member name="T:CAG.Writer">
+            <summary>
+            Class for writing to file and creating png file
+            </summary>
+        </member>
+        <member name="M:CAG.Writer.#ctor(System.String)">
+            <summary>
+            Constructor saves name of file.
+            </summary>
+            <param name="nameFile">Name of file</param>
+        </member>
+        <member name="M:CAG.Writer.writeFile(CAG.Graph,System.Boolean)">
+            <summary>
+            Method takes information from graph and writes it to file.
+            </summary>
+            <param name="gr">Graph which contain nodes and edges</param>
+            <param name="write">Value, if is true, this graph will be written to DOT. If false, this graph will be displayed to picture</param>
+            <returns>If file doesn't exist, can't open or can't write, return false. Otherwise true</returns>
+        </member>
+        <member name="M:CAG.Writer.createOutput(CAG.Graph,System.String)">
+            <summary>
+            Method writes information about edges and nodes to list of string.
+            </summary>
+            <param name="gr">Graph containing information about edges and nodes</param>
+            <param name="str">String with quotes or empty.</param>
+            <returns>List of lines</returns>
+        </member>
+        <member name="M:CAG.Writer.createPng(System.String)">
+            <summary>
+            Method creates png file as picture of graph.
+            </summary>
+            <param name="pngFile">Name of png file</param>
+            <returns>True if file was created. Otherwise false.</returns>
+        </member>
+        <member name="T:CAG.App">
+            <summary>
+            Interaction logic for App.xaml
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:CAG.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:CAG.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:CAG.Graph">
+            <summary>
+            Class Graph represents attack graph with nodes and edges.
+            </summary>
+        </member>
+        <member name="F:CAG.Graph.colorsFunction">
+            <summary>
+            Array of string which mean some level of gray.
+            </summary>
+        </member>
+        <member name="F:CAG.Graph.name">
+            <summary>
+            Name of graph.
+            </summary>
+        </member>
+        <member name="F:CAG.Graph.nodes">
+            <summary>
+            List of nodes of graph.
+            </summary>
+        </member>
+        <member name="F:CAG.Graph.edges">
+            <summary>
+            HashSet of edges of graph.
+            </summary>
+        </member>
+        <member name="F:CAG.Graph.functions">
+            <summary>
+            List of nodes which are functions
+            </summary>
+        </member>
+        <member name="F:CAG.Graph.compromised">
+            <summary>
+            HashSet of compromised nodes of graph.
+            </summary>
+        </member>
+        <member name="F:CAG.Graph.change">
+            <summary>
+            Value for analyse, if in analyse was found new compromited node, 
+            so value of change is true, otherwise false
+            </summary>
+        </member>
+        <member name="F:CAG.Graph.foundMinSet">
+            <summary>
+            Value for searching minimal set of defined set. If searching was successful,
+            value change to true;
+            </summary>
+        </member>
+        <member name="F:CAG.Graph.numberOfFound">
+            <summary>
+            Number of found minimal set.
+            </summary>
+        </member>
+        <member name="M:CAG.Graph.addNode(CAG.Node)">
+            <summary>
+            Method adds node to list of nodes.
+            </summary>
+            <param name="node">Node which will be added to list</param>
+        </member>
+        <member name="M:CAG.Graph.getNode(System.String)">
+            <summary>
+            Method gets node by value (name)
+            </summary>
+            <param name="value">String name for finding node</param>
+            <returns>Founded node or null</returns>
+        </member>
+        <member name="M:CAG.Graph.addFunction(CAG.Node@)">
+            <summary>
+            Method adds function to list of functions and also change his color on level of gray.
+            </summary>
+            <param name="fce">
+            Node, which will be analysed if it is function. 
+            If yes, it will be added to list
+            </param>
+        </member>
+        <member name="M:CAG.Graph.setNode(System.String,CAG.Node@,CAG.Node,System.Boolean)">
+            <summary>
+            Method, in case no existence of node, add node to list. 
+            If direct is true, so node adds parent.
+            </summary>
+            <param name="name">Name of node</param>
+            <param name="child">Child which can be added to list or can add parent</param>
+            <param name="parent">Parent of node</param>
+            <param name="direct">Value which mean as if can create edge</param>
+        </member>
+        <member name="M:CAG.Graph.getNodes">
+            <summary>
+            Method gets list of nodes.
+            </summary>
+            <returns>List of nodes</returns>
+        </member>
+        <member name="M:CAG.Graph.getEdges">
+            <summary>
+            Method gets set of edges.
+            </summary>
+            <returns>Set of edges</returns>
+        </member>
+        <member name="M:CAG.Graph.addEdge(CAG.Edge)">
+            <summary>
+            Method adds edge to set of edges.
+            </summary>
+            <param name="edge">Edges which will be added to set.</param>
+        </member>
+        <member name="M:CAG.Graph.addCompromisedNode(CAG.Node)">
+            <summary>
+            Method adds compromised node to set of compromised nodes.
+            </summary>
+            <param name="node">Compromise node, which will be added to set.</param>
+        </member>
+        <member name="M:CAG.Graph.deleteCompromisedNode(CAG.Node)">
+            <summary>
+            Method removes compromised node from set.
+            </summary>
+            <param name="node">Node will be removed from set and will be uncompromised.</param>
+        </member>
+        <member name="M:CAG.Graph.getCompromiseNodes">
+            <summary>
+            Method return hash set of compromised nodes.
+            </summary>
+            <returns>Set of compromised nodes.</returns>
+        </member>
+        <member name="M:CAG.Graph.setCompromiseNodes(System.Collections.Generic.Dictionary{CAG.Node,CAG.Compromise})">
+            <summary>
+            Method create new hash set of new compromised nodes from dictionary.
+            </summary>
+            <param name="newCompr">Dictionary of new compromised nodes with their compromise value.</param>
+        </member>
+        <member name="M:CAG.Graph.isFunction(CAG.Node)">
+            <summary>
+            Method tests if node is function, i.e. node is contained in hashSet of functions.
+            </summary>
+            <param name="node">Node which will be tested</param>
+            <returns>True if hashSet of functions contains node. Otherwise false.</returns>
+        </member>
+        <member name="M:CAG.Graph.analyseEncrypt(CAG.Node@)">
+            <summary>
+            Method analyses function for symmetric encrypt.
+            Find out edges to and from function and what neighbours is compromited. 
+            </summary>
+            <param name="n">Function for encrypt</param>
+        </member>
+        <member name="M:CAG.Graph.compromiteNode(CAG.Node@,System.String)">
+            <summary>
+            Method changes compromise property of node on other by string for color.
+            Method adds or also delete node to/from list of compromised node.
+            </summary>
+            <param name="n">Node which will be compromised</param>
+            <param name="color">Color of node. Default color is red.</param>
+        </member>
+        <member name="M:CAG.Graph.uncompromiteNode(CAG.Node@)">
+            <summary>
+            Method changes node on uncompromite node, i.e. color of node will be green and
+            bool value compromised of node will be false.
+            </summary>
+            <param name="n">Node which will be uncompromised</param>
+        </member>
+        <member name="M:CAG.Graph.analyseOneWayFunction(CAG.Node@)">
+            <summary>
+            Method analyses one-way-function as hash, hmac, asymmetric encryption.
+            </summary>
+            <param name="n">Function which will be analysed</param>
+        </member>
+        <member name="M:CAG.Graph.compareEntropy(CAG.Node@,System.Int32)">
+            <summary>
+            Method measures size of entropy
+            and uses coloration on parents of node.
+            </summary>
+            <param name="n">Function which parents will be coloration.</param>
+            <param name="bit">Total entropy of uncompromised nodes.</param>
+        </member>
+        <member name="M:CAG.Graph.coloration(CAG.Node@,System.String)">
+            <summary>
+            Method changes color of node and change type of compromised of node.
+            </summary>
+            <param name="n">Node which will be changed</param>
+            <param name="color">Name of color - red, orange or green</param>
+        </member>
+        <member name="M:CAG.Graph.analyse">
+            <summary>
+            General analyse for all functions. Method find out type of functions and
+            call method on specific analyse.
+            </summary>
+        </member>
+        <member name="M:CAG.Graph.isEmpty(System.Collections.Generic.List{CAG.Node})">
+            <summary>
+            Method find out if list of node is empty.
+            </summary>
+            <param name="source">List of node</param>
+            <returns>If list of node is null or empty, return true. Otherwise false</returns>
+        </member>
+        <member name="M:CAG.Graph.findCombination(System.Int32,System.Collections.Generic.List{CAG.Node}@,System.Collections.Generic.List{CAG.Node}@,System.String@,CAG.MainWindow.Output)">
+            <summary>
+            Method for creating array k-size and then calling searching all combination and
+            finding minimal set of input.
+            </summary>
+            <param name="k">K-combination of set</param>
+            <param name="input">Input set of nodes which was defined by user</param>
+            <param name="attack">Attack set of nodes which will be interested by attacker</param>
+            <param name="file">File for writing result</param>
+            <param name="typeFile">Output value - type of file (png, dot)</param>
+            <returns>Return integer value.. 2 if minimal set was found, otherwise 3.</returns>
+        </member>
+        <member name="M:CAG.Graph.combinationUtil(System.Collections.Generic.List{CAG.Node}@,CAG.Node[],System.Collections.Generic.List{CAG.Node},System.Int32,System.Int32,System.Int32,System.Int32,System.String@,CAG.MainWindow.Output)">
+            <summary>
+            Method searches recursively all k-combination of nodes of input set.
+            </summary>
+            <param name="input">Input set of nodes which was defined by user</param>
+            <param name="data">Array of nodes which has k-size. There will be different k-combination</param>
+            <param name="attack">Attack set of nodes which is interested by attacker</param>
+            <param name="start">Start index</param>
+            <param name="end">End index</param>
+            <param name="index">Current index</param>
+            <param name="k">K-combination of set</param>
+            <param name="file">File for writing result</param>
+            <param name="typeFile">Output value - type of file (png, dot)</param>
+            <returns>Return integer value.. 2 if minimal set was found, otherwise 3.</returns>
+        </member>
+        <member name="M:CAG.Graph.findMinSet(System.Collections.Generic.List{CAG.Node})">
+            <summary>
+            Method tests if all nodes in attack set was compromised.
+            </summary>
+            <param name="attack">Attack set which is interested by attacker</param>
+            <returns>False if at least one node of attack set isn't compromised, otherwise true.</returns>
+        </member>
+        <member name="M:CAG.Graph.uncompromiteAll">
+            <summary>
+            Method changes all nodes in graph on uncompromised. 
+            </summary>
+        </member>
+        <member name="M:CAG.Graph.createPngDialog(System.String@)">
+            <summary>
+            Method for opening dialog of saving, then create png file. 
+            </summary>
+            <param name="file">Name of file</param>
+        </member>
+        <member name="M:CAG.Graph.writeFile(System.String@,CAG.MainWindow.Output)">
+            <summary>
+            Method write graph to file.
+            </summary>
+            <param name="file">Name of file</param>
+            <param name="value">Type of file (png, dot)</param>
+        </member>
+        <member name="P:CAG.Graph.Name">
+            <summary>
+            Getter or setter of name of graph
+            </summary>
+        </member>
+        <member name="T:CAG.MainWindow">
+            <summary>
+            Interaction logic for MainWindow.xaml
+            </summary>
+            <summary>
+            MainWindow
+            </summary>
+        </member>
+        <member name="F:CAG.MainWindow.g">
+            <summary>
+            Attack graph
+            </summary>
+        </member>
+        <member name="F:CAG.MainWindow.f">
+            <summary>
+            Reader of file with DOT language
+            </summary>
+        </member>
+        <member name="F:CAG.MainWindow.borders">
+            <summary>
+            Dictionary where key is Border and value is node.
+            For linking between borders in graph and node.
+            </summary>
+        </member>
+        <member name="F:CAG.MainWindow.window">
+            <summary>
+            Window for properties of graphs -> entropies and set
+            </summary>
+        </member>
+        <member name="F:CAG.MainWindow.changes">
+            <summary>
+            Value for indicating if during analysing of graph was a change.
+            </summary>
+        </member>
+        <member name="F:CAG.MainWindow.fileName">
+            <summary>
+            Name of file with DOT language.
+            </summary>
+        </member>
+        <member name="M:CAG.MainWindow.#ctor">
+            <summary>
+            Constructor which can work with command line. 
+            </summary>
+        </member>
+        <member name="M:CAG.MainWindow.#ctor(System.String)">
+            <summary>
+            Constructor which read file by parametr and show graph.
+            </summary>
+            <param name="file">Name of file with DOT</param>
+        </member>
+        <member name="M:CAG.MainWindow.writeToCommandLine(System.String)">
+            <summary>
+            Method write error output to command line.
+            </summary>
+            <param name="output">Output text which will be showed in command line</param>
+        </member>
+        <member name="M:CAG.MainWindow.parseInput(System.String[])">
+            <summary>
+            Method parse command line. 
+            -fd = find min set from defined set
+            -fa = find min set from all nodes
+            -a = analyse
+            -r = run
+            -t/d = .txt/.dot
+            -p/d = .png/.dot
+            </summary>
+            <param name="input">Input from command line</param>
+            <returns>
+            Returns those values:
+            -4 in case bad input
+            -3 in case not to open or find file
+            -2 if format in CAS+ is not correct
+            -1 if format in DOT is not correct
+            0 if all was correct
+            1 if windows musts be showed
+            </returns>
+        </member>
+        <member name="M:CAG.MainWindow.cmdLineProtocol(System.String[],CAG.MainWindow.Analyse)">
+            <summary>
+            Method read from protocol and parse it.
+            </summary>
+            <param name="input">Input from command line.</param>
+            <param name="analyse">Analyse, if it is for analysing, Find_min_defined for finding minimal set from defined, 
+            otherwise Find_min_all for finding minimal set from all nodes.</param>
+            <returns>
+            Return those values:
+            -4 if bad input format
+            -3 if file can't be opened or found.
+            -2 if bad format in CAS+.
+            -1 if bad format in DOT.
+            0 if all was correct
+            </returns>
+        </member>
+        <member name="M:CAG.MainWindow.cmdLineFourthArgument(CAG.MainWindow.Analyse,System.String[])">
+            <summary>
+            Method by value does analysing or finding minimal set.
+            Then write result to file.
+            </summary>
+            <param name="analyse">Analyse, if it is for analysing, Find_min_defined for finding minimal set from defined, 
+            otherwise Find_min_all for finding minimal set from all nodes.</param>
+            <param name="input">Input from command line.</param>
+        </member>
+        <member name="M:CAG.MainWindow.cmdLineDot(System.String[],CAG.MainWindow.Analyse)">
+            <summary>
+            Method read from file with DOT.
+            </summary>
+            <param name="input">Input from command line.</param>
+            <param name="analyse">Analyse, if it is for analysing, Find_min_defined for finding minimal set from defined, 
+            otherwise Find_min_all for finding minimal set from all nodes.</param>
+            <returns>
+            Returns those values:
+            -3 if file can't be opened or found.
+            -1 if bad format in DOT.
+            0 if OK
+            </returns>
+        </member>
+        <member name="M:CAG.MainWindow.Analysis_SizeChanged(System.Object,System.Windows.SizeChangedEventArgs)">
+            <summary>
+            Method set width and height of canvas, scrollViewer after changing size of window.
+            </summary>
+            <param name="sender">Sender</param>
+            <param name="e">Size Changed Event Args</param>
+        </member>
+        <member name="M:CAG.MainWindow.showGraph">
+            <summary>
+            Method clears canvas, reads from file and draws new graph. 
+            </summary>
+        </member>
+        <member name="M:CAG.MainWindow.clearAll">
+            <summary>
+            Method for clearing canvas - clear borders and edges in graph.
+            </summary>
+        </member>
+        <member name="M:CAG.MainWindow.readFile">
+            <summary>
+            Method for reading from file and parsing it.
+            </summary>
+            <returns>
+            Return 0 if reading and parsing file was correct.
+            Return -1 if file was not found or couldn't be opened.
+            Otherwise error in format DOT.
+            </returns>
+        </member>
+        <member name="M:CAG.MainWindow.NewWindow_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Method open new empty window.
+            </summary>
+            <param name="sender">Sender</param>
+            <param name="e">Routed event args</param>
+        </member>
+        <member name="M:CAG.MainWindow.Open_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Method save name of file, which user chose, and show graph from file.
+            </summary>
+            <param name="sender">Sender</param>
+            <param name="e">Routed event args</param>
+        </member>
+        <member name="M:CAG.MainWindow.OpenProtocol_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Method read from protocol and write to DOT. Then show graph from file with DOT.
+            </summary>
+            <param name="sender">Sender</param>
+            <param name="e">Routed event args</param>
+        </member>
+        <member name="M:CAG.MainWindow.openDialog(System.String)">
+            <summary>
+            Open dialog and save name of file.
+            </summary>
+            <param name="suffixes">Suffixes of required files.</param>
+            <returns>Bool value if dialog finished correctly.</returns>
+        </member>
+        <member name="M:CAG.MainWindow.Save_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Method for saving graph to file with DOT.
+            </summary>
+            <param name="sender">Sender</param>
+            <param name="e">Routed event args</param>
+        </member>
+        <member name="M:CAG.MainWindow.CreatePng_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Method for creating PNG file from graph. 
+            </summary>
+            <param name="sender">Sender</param>
+            <param name="e">Routed event args</param>
+        </member>
+        <member name="M:CAG.MainWindow.FindMinSet_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            After click in menu "Find minimal set of defined set" call finding minimal set.
+            </summary>
+            <param name="sender">Sender</param>
+            <param name="e">Routed event args</param>
+        </member>
+        <member name="M:CAG.MainWindow.FindMinSetGraph_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            After click in menu "Find minimal set of all nodes" call finding minimal set of all nodes. 
+            Method calls findMinSetGraph.
+            </summary>
+            <param name="sender">Sender</param>
+            <param name="e">Routed event args</param>
+        </member>
+        <member name="M:CAG.MainWindow.findMinSetAll(System.String,CAG.MainWindow.Output)">
+            <summary>
+            Method joins to every nodes their set from Nothing on Input except nodes in Attack set.
+            </summary>
+            <param name="file"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:CAG.MainWindow.findMinSet(System.String,CAG.MainWindow.Output)">
+            <summary>
+            Method for finding minimal set of input set.
+            </summary>
+            <param name="file">Name of file which result will be written to.</param>
+            <param name="value">Output value - where result will be written to
+            Output.PNG = to png
+            Output.DOT = to dot
+            Output.Nothing = open dialog and user will choose file.</param>
+        </member>
+        <member name="M:CAG.MainWindow.Exit_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Method for close this window after click on "Exit" in menu.
+            </summary>
+            <param name="sender">Sender</param>
+            <param name="e">Routed event args</param>
+        </member>
+        <member name="M:CAG.MainWindow.sendWarning">
+            <summary>
+            If in graphs was a change, method send warning.
+            </summary>
+            <returns>MessageBoxResult - user choose yes, no or cancel.</returns>
+        </member>
+        <member name="M:CAG.MainWindow.drawGraph">
+            <summary>
+            Method draw nodes and edges to graph.
+            </summary>
+        </member>
+        <member name="M:CAG.MainWindow.drawNode(CAG.Node)">
+            <summary>
+            Method draw node to graph.
+            </summary>
+            <param name="n">Node</param>
+        </member>
+        <member name="M:CAG.MainWindow.bor_mouseLeftButtonUp(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+            Method changes color and compromised value of node. Then does analysis of graph.
+            </summary>
+            <param name="sender">Sender</param>
+            <param name="e">Mouse button event args</param>
+        </member>
+        <member name="M:CAG.MainWindow.changeNode(System.Windows.Controls.Border@,System.String,CAG.Compromise)">
+            <summary>
+            Method changes color and compromise value of node. 
+            Also method adds or deletes node to/from list of compromised node.
+            </summary>
+            <param name="bor">Border which is associated with node.</param>
+            <param name="color">New color</param>
+            <param name="value">New compromised value</param>
+        </member>
+        <member name="M:CAG.MainWindow.drawEdge(CAG.Edge)">
+            <summary>
+            Method draws edge to graph.
+            </summary>
+            <param name="e">Edge</param>
+        </member>
+        <member name="M:CAG.MainWindow.Mark_all_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Method change color and compromise value of all nodes on "red" and easy compromise.
+            </summary>
+            <param name="sender">Sender</param>
+            <param name="e">Routed event args</param>
+        </member>
+        <member name="M:CAG.MainWindow.Unmark_all_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Method change color and compromise value of all nodes on "green" and impossible compromise.
+            </summary>
+            <param name="sender">Sender</param>
+            <param name="e">Routed event args</param>
+        </member>
+        <member name="M:CAG.MainWindow.Properties_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Method open window with entropies and sets of nodes after click on "Properties" in menu.
+            </summary>
+            <param name="sender">Sender</param>
+            <param name="e">Routed event args</param>
+        </member>
+        <member name="M:CAG.MainWindow.update">
+            <summary>
+            Method update new changes in graph.
+            </summary>
+        </member>
+        <member name="M:CAG.MainWindow.Analysis_StateChanged(System.Object,System.EventArgs)">
+            <summary>
+            Method for change width and height of this window in case maximized of window.
+            </summary>
+            <param name="sender">Sender</param>
+            <param name="e">Event args</param>
+        </member>
+        <member name="M:CAG.MainWindow.Analysis_Closed(System.Object,System.EventArgs)">
+            <summary>
+            Method closes all window (also properties)
+            </summary>
+            <param name="sender">Object</param>
+            <param name="e">EventArgs</param>
+        </member>
+        <member name="M:CAG.MainWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="P:CAG.MainWindow.Changes">
+            <summary>
+            Getter and setter of changes.
+            </summary>
+        </member>
+        <member name="T:CAG.MainWindow.Output">
+            <summary>
+            Enum for type of output file. 
+            </summary>
+        </member>
+        <member name="F:CAG.MainWindow.Output.PNG">
+            <summary>
+            PNG file
+            </summary>
+        </member>
+        <member name="F:CAG.MainWindow.Output.DOT">
+            <summary>
+            File in DOT language
+            </summary>
+        </member>
+        <member name="F:CAG.MainWindow.Output.NOTHING">
+            <summary>
+            Without format.
+            </summary>
+        </member>
+        <member name="T:CAG.MainWindow.Analyse">
+            <summary>
+            Enum for type of analyse for input command line. 
+            FIND_MIN_DEFINED == find minimal set of defined set
+            FIND_MIN_ALL == find minimal set of all nodes
+            ANALYSE == analyse attack graph
+            </summary>
+        </member>
+        <member name="T:CAG.Node">
+            <summary>
+            Class represents node of graph.
+            </summary>
+        </member>
+        <member name="F:CAG.Node.v">
+            <summary>
+            Vertex of node. It contains x and y coordinates, height and width of node.
+            </summary>
+        </member>
+        <member name="F:CAG.Node.parents">
+            <summary>
+            List of parents of node
+            </summary>
+        </member>
+        <member name="F:CAG.Node.children">
+            <summary>
+            List of children of node
+            </summary>
+        </member>
+        <member name="F:CAG.Node.compromise">
+            <summary>
+            Property of node which says, how much node is compromised.
+            </summary>
+        </member>
+        <member name="F:CAG.Node.bit">
+            <summary>
+            Count of bits of data.
+            </summary>
+        </member>
+        <member name="F:CAG.Node.type">
+            <summary>
+            Type of node
+            </summary>
+        </member>
+        <member name="F:CAG.Node.set">
+            <summary>
+            Value of enum means if node is in defined input set or set about which attacker interests.
+            </summary>
+        </member>
+        <member name="M:CAG.Node.#ctor">
+            <summary>
+            Constructor without parametres, do nothing.
+            </summary>
+        </member>
+        <member name="M:CAG.Node.#ctor(System.String)">
+            <summary>
+            Set belonging to Set.Nothing and sets color on green.
+            </summary>
+            <param name="value">Name of node</param>
+        </member>
+        <member name="M:CAG.Node.getParents">
+            <summary>
+            Method gets parents of node.
+            </summary>
+            <returns>List of parents of node</returns>
+        </member>
+        <member name="M:CAG.Node.getChildren">
+            <summary>
+            Method gets children of node.
+            </summary>
+            <returns>List of children of node</returns>
+        </member>
+        <member name="M:CAG.Node.addParents(CAG.Node)">
+            <summary>
+            Method adds parent to list of parents
+            </summary>
+            <param name="parent">Parent of node</param>
+        </member>
+        <member name="M:CAG.Node.addChild(CAG.Node)">
+            <summary>
+            Method adds child to list of children
+            </summary>
+            <param name="child">Child of node</param>
+        </member>
+        <member name="M:CAG.Node.Equals(System.Object)">
+            <summary>
+            Method compare this node with object. 
+            They are equal if all attributes are equal.
+            </summary>
+            <param name="obj">Object which will be compared with.</param>
+            <returns>If object is null or isn't equal with this node, return false. Otherwise true</returns>
+        </member>
+        <member name="M:CAG.Node.GetHashCode">
+            <summary>
+            Override method gets hash code of node.
+            </summary>
+            <returns>Hash code of node</returns>
+        </member>
+        <member name="M:CAG.Node.containSub(System.String)">
+            <summary>
+            Method finds out, if value of node contains parameter.
+            </summary>
+            <param name="sub">Substring</param>
+            <returns>True, if value of node contains substring, otherwise false</returns>
+        </member>
+        <member name="P:CAG.Node.Type">
+            <summary>
+            Getter and setter of type of node.
+            </summary>
+        </member>
+        <member name="P:CAG.Node.Compromised">
+            <summary>
+            Getter and setter of compromise value of node.
+            </summary>
+        </member>
+        <member name="P:CAG.Node.V">
+            <summary>
+            Getter and setter of vertex
+            </summary>
+        </member>
+        <member name="P:CAG.Node.Bit">
+            <summary>
+            Getter and setter of count of bits.
+            </summary>
+        </member>
+        <member name="P:CAG.Node.Set">
+            <summary>
+            Getter and setter of belonging to what set. 
+            </summary>
+        </member>
+        <member name="T:CAG.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:CAG.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:CAG.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>

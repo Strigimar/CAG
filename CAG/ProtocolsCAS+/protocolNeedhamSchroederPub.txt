@@ -1,0 +1,24 @@
+protocol NeedhamSchroederPublicKey;
+identifiers
+A,B 		: user;
+Na,Nb 		: number; % Nb:A;
+KPa,KPb 	: public_key; % KPa:50bit;
+hash		: function;
+
+messages
+1. A -> B 	: {Nb, hash(A,B)}KPb
+2. B -> A 	: {Na, Nb}KPa
+3. A -> B 	: {Nb}KPb
+
+knowledge
+A	: A,B,KPa,KPb;
+B	: A,B,KPa,KPb;
+
+session_instances
+ [A:alice,B:bob,KPa:ka,KPb:kb];
+
+intruder_knowledge
+alice, bob, ka;
+
+goal
+B authenticate A on Nb;

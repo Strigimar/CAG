@@ -1,0 +1,60 @@
+FindMinSetAll -- count of oldNothing8 and output value NOTHING
+
+findMinSet -- 1 8 1
+FindMinSetAll -- count of oldNothing8 and output value NOTHING
+
+findMinSet -- 1 8 1
+FindMinSetAll -- count of oldNothing8 and output value NOTHING
+
+findMinSet -- 1 8 1
+FindMinSetAll -- count of oldNothing8 and output value NOTHING
+
+findMinSet -- 1 8 1
+FindMinSetAll -- count of oldNothing8 and output value NOTHING
+
+findMinSet -- 1 8 1
+Win32 Systém nemůže nalézt uvedený soubor
+FindMinSetAll -- count of oldNothing8 and output value NOTHING
+
+findMinSet -- 1 8 1
+FindMinSetAll -- count of oldNothing8 and output value NOTHING
+
+findMinSet -- 1 8 1
+FindMinSetAll -- count of oldNothing78 and output value NOTHING
+
+findMinSet -- 3 78 1
+FindMinSetAll -- count of oldNothing8 and output value NOTHING
+
+findMinSet -- 1 8 1
+Win32 Systém nemůže nalézt uvedený soubor
+FindMinSetAll -- count of oldNothing8 and output value NOTHING
+
+findMinSet -- 1 8 1
+FindMinSetAll -- count of oldNothing8 and output value NOTHING
+
+findMinSet -- 1 8 1
+FindMinSetAll -- count of oldNothing8 and output value NOTHING
+
+findMinSet -- 1 8 1
+Win32 Systém nemůže nalézt uvedený soubor
+FindMinSetAll -- count of oldNothing8 and output value NOTHING
+
+findMinSet -- 1 8 1
+Win32 Přístup byl odepřen
+FindMinSetAll -- count of oldNothing8 and output value NOTHING
+
+findMinSet -- 1 8 1
+Win32 Přístup byl odepřen
+FindMinSetAll -- count of oldNothing8 and output value NOTHING
+
+findMinSet -- 1 8 1
+Win32 Systém nemůže nalézt uvedený soubor
+FindMinSetAll -- count of oldNothing8 and output value NOTHING
+
+findMinSet -- 1 8 1
+FindMinSetAll -- count of oldNothing8 and output value NOTHING
+
+findMinSet -- 1 8 1
+FindMinSetAll -- count of oldNothing78 and output value NOTHING
+
+findMinSet -- 3 78 1
